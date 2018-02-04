@@ -1,5 +1,6 @@
 package me.thinkpuppy.emotes.listener;
 
+import me.thinkpuppy.emotes.inventory.EmotesGUI;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -22,25 +23,10 @@ public class Emotes implements Listener{
 		
 		Player player = (Player) event.getWhoClicked();
 		ItemStack item = event.getCurrentItem();
-		if (item.getType() == Material.SKULL_ITEM) {
-		
-		Inventory EmotesGUI = Bukkit.createInventory(null, 9, "Emotes");
-		
-		ItemStack HappyIcon = nameItem(Material.DIAMOND_CHESTPLATE, ChatColor.LIGHT_PURPLE+ "Happy Emote");
-		ItemStack SadIcon = nameItem(Material.DIAMOND_CHESTPLATE, ChatColor.LIGHT_PURPLE+ "Sad Emote");
-		ItemStack HugIcon = nameItem(Material.DIAMOND_CHESTPLATE, ChatColor.LIGHT_PURPLE+ "Hug Emote");
-		ItemStack DanceIcon = nameItem(Material.DIAMOND_CHESTPLATE, ChatColor.LIGHT_PURPLE+ "Dance Emote");
-		ItemStack FoodIcon = nameItem(Material.COOKED_BEEF, ChatColor.LIGHT_PURPLE+ "Eating Food");
-		
-		EmotesGUI.setItem(2, HappyIcon);
-		EmotesGUI.setItem(3, SadIcon);
-		EmotesGUI.setItem(4, FoodIcon);
-		EmotesGUI.setItem(5, HugIcon);
-		EmotesGUI.setItem(6, DanceIcon);
-		
-		player.closeInventory();
-		player.openInventory(EmotesGUI);
-		}
+			if (item.getType() == Material.SKULL_ITEM) {
+				player.closeInventory();
+				player.openInventory(EmotesGUI.emoteGui);
+			}
 		}
 	}
 	private ItemStack nameItem(ItemStack item, String name) {

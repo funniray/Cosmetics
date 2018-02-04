@@ -16,7 +16,7 @@ public class Main extends JavaPlugin{
 	private void RegiterEvents() {
 		PluginManager pm = getServer().getPluginManager();
 	
-		pm.registerEvents(new EmotesGUIClick(), this);
+		pm.registerEvents(new EmotesGUIClick(this), this);
 		pm.registerEvents(new Emotes(), this);
 		pm.registerEvents(new CosmeticsGUI(), this);
 	}

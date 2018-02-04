@@ -3,5 +3,3 @@ version: 1.0
 author: ThinkPuppy
 main: me.thinkpuppy.emotes.Main
 description: It's a emotes plugin which lets you express your current emotions.
-
-commands:
